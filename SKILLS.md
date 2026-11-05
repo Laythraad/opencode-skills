@@ -13,6 +13,15 @@
 powershell -ExecutionPolicy Bypass -File scripts\sync-skills.ps1
 ```
 
+**المستودع العام:** <https://github.com/Laythraad/opencode-skills> — نسخة منشورة من المكتبة نفسها، تُحدَّث بـ:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\publish-skills.ps1   # ينسخ + يولّد README + commit + push
+powershell -ExecutionPolicy Bypass -File scripts\publish-skills.ps1 -NoPush   # تحضير محلي فقط
+```
+
+النشر يتطلب `gh auth login` ناجحاً ونطاقات `repo, read:org, gist`.
+
 **قواعد إلزامية عالمية:** `~/.config/opencode/AGENTS.md` — تُحمَّل في كل جلسة وتفرض اختيار المهارة وبوابات القياس.
 
 ---
@@ -142,4 +151,5 @@ powershell -ExecutionPolicy Bypass -File scripts\sync-skills.ps1
 3. الإجراءات، جداول القرار، الأنماط المضادة، المخرجات.
 4. القوالب في `references/`، السكربتات في `scripts/`.
 5. شغّل `scripts\sync-skills.ps1`.
-6. تُحمَّل تلقائياً عند الحفظ — لا حاجة لإعادة تشغيل.
+6. شغّل `scripts\publish-skills.ps1` لنشرها إلى GitHub.
+7. تُحمَّل تلقائياً عند الحفظ — لا حاجة لإعادة تشغيل.
